@@ -4,5 +4,5 @@
   vars_files:
     - signing-key.yaml
   tasks:
-    - debug: msg="signing-key = {{ signing-key }}"
+    - debug: msg="signing-key = {{ signingkey }}"
 
