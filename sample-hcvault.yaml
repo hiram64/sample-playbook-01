@@ -2,14 +2,9 @@
 - hosts: localhost
   gather_facts: no
   tasks:
-    - name: get env val
-      shell: |
-        echo ${VAULT_TOKEN}
-      register: res
-
-    - name: disp
+    - name:
       debug:
-        msg: "{{ res.stdout_lines }}"
+        var: VAULT_TOKEN
 
     - name: Lookup and Output Entire Secret from Vault
       debug:
