@@ -2,6 +2,15 @@
 - hosts: localhost
   gather_facts: no
   tasks:
+    - name: get env val
+      shell: |
+        echo ${VAULT_TOKEN}
+      register: res
+
+    - name: disp
+      debug:
+        msg: "{{ res.stdout_lines }}"
+
     - name: Lookup and Output Entire Secret from Vault
       debug:
         msg: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=kv/data/signing:signing token=VAULT_TOKEN url=http://18.234.209.168:8200') }}"
