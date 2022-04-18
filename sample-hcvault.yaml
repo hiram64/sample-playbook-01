@@ -4,4 +4,4 @@
   tasks:
     - name: Lookup and Output Entire Secret from Vault
       debug:
-        msg: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=kv/data/signing:signing auth_method=approle role_id={{ ROLE_ID }} secret_id={{ SECRET_ID }} url={{ URL }}') }}"
+        msg: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=kv/data/signing-pubkey:signing-pubkey auth_method=approle role_id={{ ROLE_ID }} secret_id={{ SECRET_ID }} url={{ URL }}') }}"

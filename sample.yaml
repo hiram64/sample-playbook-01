@@ -2,7 +2,7 @@
 - hosts: all
   gather_facts: no
   vars_files:
-    - signing-key.yaml
+    - public-key.yaml
   tasks:
-    - debug: msg="signing-key = {{ signingkey }}"
+    - debug: msg="public-key = {{ publickey }}"
 
